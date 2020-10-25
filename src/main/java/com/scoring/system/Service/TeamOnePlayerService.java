@@ -15,11 +15,11 @@ public class TeamOnePlayerService {
     @Autowired
     private TeamOnePlayerRepository teamOnePlayerRepository;
 
-    public List<TeamOnePlayersEntity> AddNewTeamOnePlayers(List<Player> playerList){
+    public List<TeamOnePlayersEntity> AddNewTeamOnePlayers(List<Player> playerList) {
 
         List<TeamOnePlayersEntity> teamOnePlayersEntityArrayList = new ArrayList<TeamOnePlayersEntity>();
 
-        for (Player playerObj : playerList){
+        for (Player playerObj : playerList) {
 
             TeamOnePlayersEntity teamOnePlayersEntity = new TeamOnePlayersEntity();
 
@@ -33,7 +33,10 @@ public class TeamOnePlayerService {
 
         }
 
-       return (List<TeamOnePlayersEntity>) teamOnePlayerRepository.saveAll(teamOnePlayersEntityArrayList);
+        return (List<TeamOnePlayersEntity>) teamOnePlayerRepository.saveAll(teamOnePlayersEntityArrayList);
     }
 
+    public List<TeamOnePlayersEntity> GetAllTeamOnePlayers() {
+        return (List<TeamOnePlayersEntity>) teamOnePlayerRepository.findAll();
+    }
 }

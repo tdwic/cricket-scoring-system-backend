@@ -21,6 +21,7 @@ public class TeamPlayerController {
     @Autowired
     private TeamTwoPlayerService teamTwoPlayerService;
 
+    //Post Methods
     @RequestMapping(value = "teamOnePlayers" , method = RequestMethod.POST)
     public List<TeamOnePlayersEntity> AddNewTeamOnePlayers(@RequestBody List<Player> palyerList){
         return teamOnePlayerService.AddNewTeamOnePlayers(palyerList);
@@ -30,5 +31,19 @@ public class TeamPlayerController {
     public List<TeamTwoPlayersEntity> AddNewTeamTwoPlayers(@RequestBody List<Player> palyerList){
         return teamTwoPlayerService.AddNewTeamTwoPlayers(palyerList);
     }
+    //Post Methods
+
+    //Get Methods
+
+    @RequestMapping(value = "teamOnePlayers" , method = RequestMethod.GET)
+    public List<TeamOnePlayersEntity> GetAllTeamOnePlayers(){
+        return teamOnePlayerService.GetAllTeamOnePlayers();
+    }
+
+    @RequestMapping(value = "teamTwoPlayers" , method = RequestMethod.GET)
+    public List<TeamTwoPlayersEntity> GetAllTeamTwoPlayers(){
+        return teamTwoPlayerService.GetAllTeamTwoPlayers();
+    }
+    //Get Methods
 
 }

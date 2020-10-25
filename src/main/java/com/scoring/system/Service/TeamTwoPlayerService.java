@@ -37,4 +37,8 @@ public class TeamTwoPlayerService {
         return (List<TeamTwoPlayersEntity>) teamTwoPlayerRepository.saveAll(teamOnePlayersEntityArrayList);
     }
 
+    public List<TeamTwoPlayersEntity> GetAllTeamTwoPlayers() {
+        return (List<TeamTwoPlayersEntity>) teamTwoPlayerRepository.findAll();
+    }
+
 }
