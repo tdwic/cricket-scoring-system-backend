@@ -31,5 +31,4 @@ public class TeamPlayerController {
         return teamTwoPlayerService.AddNewTeamTwoPlayers(palyerList);
     }
 
-
 }
