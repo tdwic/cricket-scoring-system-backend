@@ -6,6 +6,8 @@ import com.scoring.system.Repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MatchService {
 
@@ -21,6 +23,10 @@ public class MatchService {
         matchEntity.setNoOfOvers(match.getNoOfOvers());
 
         return matchRepository.save(matchEntity);
+    }
+
+    public List<MatchEntity> GetMatchDetails(){
+        return (List<MatchEntity>) matchRepository.findAll();
     }
 
 }

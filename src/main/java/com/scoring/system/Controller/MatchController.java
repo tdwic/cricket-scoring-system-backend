@@ -6,6 +6,8 @@ import com.scoring.system.Service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/")
@@ -17,6 +19,11 @@ public class MatchController {
     @RequestMapping(value = "match", method = RequestMethod.POST)
     public MatchEntity NewMatch(@RequestBody Match match){
         return matchService.NewMatch(match);
+    }
+
+    @RequestMapping(value = "match", method = RequestMethod.GET)
+    public List<MatchEntity> GetMatchDetails(){
+        return matchService.GetMatchDetails();
     }
 
 }
